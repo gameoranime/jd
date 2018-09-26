@@ -1,0 +1,273 @@
+/* 在主页的样式去引入公共的样式文件 */
+/* 公共变量 */
+/* 样式重置 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+  box-sizing: border-box;
+  /* 去除移动端按住元素的时候会出现高亮背景色 */
+  -webkit-tap-highlight-color: transparent;
+  /* 去掉所有移动端内边框 */
+  outline: none;
+}
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 16px;
+}
+.layout {
+  margin: 0 auto;
+  max-width: 6.4rem;
+  min-width: 3.2rem;
+  background-color: #fff;
+  height: 100%;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+}
+img {
+  /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+/* 公共样式 */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名以icon-开头 或者 中间包含了空格icon-的元素 */
+[class^="icon-"],
+[class*=" icon-"] {
+  /* 公共的精灵图 */
+  background-image: url(../images/sprites.png);
+  /* 设置背景图的大小 图片要缩小一半来写 背景图就设置背景图大小 */
+  background-size: 2rem 2rem;
+}
+.border-left {
+  border-left: 0.01rem solid #ccc;
+}
+.border-right {
+  border-right: 0.01rem solid #ccc;
+}
+.border-top {
+  border-top: 0.01rem solid #ccc;
+}
+.border-bottom {
+  border-bottom: 0.01rem solid #ccc;
+}
+body {
+  background: #ccc;
+}
+#header {
+  max-width: 6.4rem;
+  display: flex;
+  text-align: center;
+  line-height: 0.35rem;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+#header > .icon-logo {
+  display: block;
+  width: 0.6rem;
+  height: 0.3rem;
+  background-position: 0 -1.08rem;
+  margin: 0.05rem 0 0 0.05rem;
+}
+#header > .search-form {
+  flex: 1;
+  margin-left: 0.05rem;
+  margin-bottom: 0.05rem;
+  position: relative;
+  z-index: 999;
+}
+#header > .search-form > input {
+  width: 100%;
+  line-height: 0.3rem;
+  border-radius: 0.15rem;
+  padding-left: 0.3rem;
+}
+#header > .search-form > .icon-search {
+  background-position: -0.6rem -1.08rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  position: absolute;
+  left: 0.08rem;
+  top: 0.09rem;
+}
+#header > .login {
+  width: 0.6rem;
+  color: #fff;
+}
+#slide .swiper-slide > a > img {
+  width: 100%;
+}
+#nav {
+  padding: 0.15rem;
+  background: #fff;
+}
+#nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#nav ul > li {
+  width: 25%;
+}
+#nav ul > li > a > img {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+#nav ul > li > a > p {
+  font-size: 0.14rem;
+  line-height: 0.25rem;
+}
+#main {
+  padding: 0.1rem;
+  padding-bottom: 0.6rem;
+  background: #eee;
+}
+#main #seckill {
+  background: #fff;
+  border: 0.01rem solid #ccc;
+  box-shadow: 0px 0px 0.01rem #ccc;
+  line-height: 0.3rem;
+}
+#main #seckill > .seckill-title {
+  position: relative;
+}
+#main #seckill > .seckill-title > .seckill-icon {
+  width: 0.2rem;
+  height: 0.25rem;
+  margin-left: 0.05rem;
+  vertical-align: top;
+}
+#main #seckill > .seckill-title > span {
+  font-size: 0.14rem;
+  color: #e93b3d;
+}
+#main #seckill > .seckill-title > a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.14rem;
+}
+#main #seckill > .seckill-title > .seckill-time {
+  display: inline-block;
+  margin-left: 0.15rem;
+}
+#main #seckill > .seckill-title > .seckill-time > span {
+  color: #fff;
+  background: #000;
+  width: 0.15rem;
+  height: 0.15rem;
+  display: inline-block;
+  text-align: center;
+  line-height: 0.15rem;
+}
+#main #seckill > .seckill-title > .seckill-time > span:nth-child(3n) {
+  background: #fff;
+  color: #000;
+}
+#main #seckill > .seckill-content > ul {
+  display: flex;
+}
+#main #seckill > .seckill-content > ul > li {
+  flex: 1;
+}
+#main #seckill > .seckill-content > ul > li > a {
+  font-size: 0.12rem;
+  line-height: 0.2rem;
+  text-align: center;
+}
+#main #seckill > .seckill-content > ul > li > a > img {
+  width: 100%;
+}
+#main #seckill > .seckill-content > ul > li > a p:nth-child(2) {
+  color: #e93b3d;
+}
+#main #seckill > .seckill-content > ul > li + li {
+  border-left: 0.01rem solid #ccc;
+}
+#main #jd-market {
+  border: 0.01rem solid #ccc;
+  background: #fff;
+  margin-top: 0.1rem;
+  font-size: 0.16rem;
+}
+#main #jd-market .jd-market-title > h4 {
+  font-weight: normal;
+  line-height: 0.3rem;
+  padding-left: 0.3rem;
+  position: relative;
+}
+#main #jd-market .jd-market-title > h4::before {
+  content: "";
+  position: absolute;
+  width: 0.04rem;
+  height: 0.15rem;
+  background: #e93b3d;
+  top: 0.08rem;
+  left: 0.2rem;
+}
+#main #jd-market .jd-market-content {
+  display: flex;
+}
+#main #jd-market .jd-market-content > .left {
+  flex: 1;
+}
+#main #jd-market .jd-market-content > .left > a {
+  display: block;
+}
+#main #jd-market .jd-market-content > .left > a > img {
+  width: 100%;
+}
+#main #jd-market .jd-market-content > .right {
+  flex: 1;
+}
+#main #jd-market .jd-market-content > .right > a {
+  display: block;
+}
+#main #jd-market .jd-market-content > .right > a > img {
+  width: 100%;
+}
+#footer {
+  max-width: 6.4rem;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#footer > ul > li {
+  float: left;
+  width: 25%;
+}
+#footer > ul > li > a {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+#footer > ul > li > a > img {
+  width: 0.65rem;
+  height: 0.5rem;
+}

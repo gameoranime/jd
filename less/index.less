@@ -1,0 +1,239 @@
+/* 在主页的样式去引入公共的样式文件 */
+
+@import 'base.less';
+body {
+    background: #ccc;
+}
+
+// .layout {
+//     margin: 0 auto;
+//     max-width: 6.4rem;
+//     min-width: 3.2rem;
+//     background-color: #fff;
+// }
+
+// 头部
+#header {
+    max-width: 6.4rem;
+    display: flex;
+    text-align: center;
+    line-height: 0.35rem;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    >.icon-logo {
+        display: block;
+        width: 0.6rem;
+        height: 0.3rem; // background: url("../images/sprites.png") 0 -1.08rem;
+        background-position: 0 -1.08rem; // background-size: 2rem 2rem;
+        margin: 0.05rem 0 0 0.05rem;
+    }
+    >.search-form {
+        flex: 1;
+        margin-left: 0.05rem;
+        margin-bottom: 0.05rem;
+        position: relative;
+        z-index: 999;
+        >input {
+            width: 100%;
+            line-height: 0.3rem;
+            border-radius: 0.15rem;
+            padding-left: 0.3rem;
+        }
+        >.icon-search {
+            // background: url(../images/sprites.png) -0.6rem -1.08rem ~'/' 2rem 2rem;
+            background-position: -0.6rem -1.08rem;
+            width: 0.2rem;
+            height: 0.2rem;
+            position: absolute;
+            left: 0.08rem;
+            top: 0.09rem;
+        }
+    }
+    >.login {
+        width: 0.6rem;
+        color: #fff;
+    }
+}
+
+// 轮播图区域
+#slide {
+    .swiper-slide{
+        >a{
+            >img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+// 导航条区域
+#nav {
+    padding: 0.15rem;
+    background: #fff;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        >li {
+            width: 25%;
+            >a {
+                >img {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                }
+                >p {
+                    font-size: 0.14rem;
+                    line-height: 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+// main主体
+#main {
+    padding: 0.1rem; // 秒杀
+    padding-bottom: 0.6rem;
+    background: #eee;
+    #seckill {
+        background: #fff;
+        border: 0.01rem solid #ccc;
+        // box-sizing: border-box;
+        box-shadow: 0px 0px 0.01rem #ccc;
+        line-height: 0.3rem; // 秒杀头部
+        >.seckill-title {
+            position: relative;
+            >.seckill-icon {
+                width: 0.2rem;
+                height: 0.25rem;
+                margin-left: 0.05rem;
+                vertical-align: top;
+            }
+            >span {
+                font-size: 0.14rem;
+                color: @main-color;
+            }
+            >a {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 0.14rem;
+            }
+            >.seckill-time {
+                display: inline-block;
+                margin-left: 0.15rem;
+                >span {
+                    color: #fff;
+                    background: #000;
+                    width: 0.15rem;
+                    height: 0.15rem;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 0.15rem;
+                    &:nth-child(3n) {
+                        background: #fff;
+                        color: #000;
+                    }
+                }
+            }
+        } // 秒杀内容
+        >.seckill-content {
+            >ul {
+                display: flex;
+                >li {
+                    flex: 1;
+                    >a {
+                        font-size: 0.12rem;
+                        line-height: 0.2rem;
+                        text-align: center;
+                        >img {
+                            width: 100%;
+                        }
+                        p:nth-child(2) {
+                            color: @main-color;
+                        }
+                    }
+                    &+li {
+                        border-left: 0.01rem solid @border-color;
+                    }
+                }
+            }
+        }
+    } // 京东超市
+    #jd-market {
+        border: 0.01rem solid #ccc;
+        background: #fff;
+        margin-top: 0.1rem;
+        font-size: 0.16rem;
+        // 超市头部
+        .jd-market-title {
+            >h4 {
+                font-weight: normal;
+                line-height: 0.3rem;
+                padding-left: 0.3rem;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 0.04rem;
+                    height: 0.15rem;
+                    background: @main-color;
+                    top: 0.08rem;
+                    left: 0.2rem;
+                }
+            }
+        }
+        // 超市身体
+        .jd-market-content {
+            // 左
+            display: flex;
+            >.left{
+                flex:1;
+                >a {
+                    display: block;
+                    >img{
+                        width: 100%;
+                    }
+                }
+            }
+            // 右
+            >.right{
+                flex:1;
+                >a {
+                    display: block;
+                    >img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+// 底部footer
+
+#footer {
+    max-width: 6.4rem;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    >ul{
+        >li{
+            float: left;
+            width: 25%;
+            >a{
+                width: 100%;
+                display: block;
+                text-align: center;
+                >img{
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}
